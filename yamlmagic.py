@@ -53,20 +53,20 @@ class YAMLMagics(Magics):
         line = line.strip()
         args = magic_arguments.parse_argstring(self.yaml, line)
 
-        display(Javascript(
-            """
-            require(
-                [
-                    "notebook/js/codecell",
-                    "codemirror/mode/yaml/yaml"
-                ],
-                function(cc){
-                    cc.CodeCell.options_default.highlight_modes.magic_yaml = {
-                        reg: ["^%%yaml"]
-                    }
-                }
-            );
-            """))
+        # display(Javascript(
+        #     """
+        #     require(
+        #         [
+        #             "notebook/js/codecell",
+        #             "codemirror/mode/yaml/yaml"
+        #         ],
+        #         function(cc){
+        #             cc.CodeCell.options_default.highlight_modes.magic_yaml = {
+        #                 reg: ["^%%yaml"]
+        #             }
+        #         }
+        #     );
+        #     """))
 
         loader = get_ipython().user_global_ns.get(args.loader, None)
         if loader is None:
