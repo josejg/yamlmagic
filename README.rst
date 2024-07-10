@@ -20,7 +20,7 @@ From the command line (or with ``!`` in a notebook cell):
 
 .. code:: bash
 
-    pip install yamlmagic
+    pip install git+https://github.com/josejg/yamlmagic.git
 
 Enable
 ------
